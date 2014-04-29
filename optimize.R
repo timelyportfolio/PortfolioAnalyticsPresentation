@@ -375,7 +375,25 @@ if(file.exists("figures/rp_plot.png")){
   tmp2 <- data.frame(name="simplex", mean=rp2_mean, sd=rp2_StdDev)
   tmp3 <- data.frame(name="grid", mean=rp3_mean, sd=rp3_StdDev)
   tmp <- rbind(tmp1, tmp2, tmp3)
-  rp_viz <- nPlot(mean ~ sd, group="name", data=tmp, type="scatterChart")
+  rp_viz <- nPlot(
+    mean ~ sd
+    , group="name"
+    , data=tmp
+    , type="scatterChart"
+  )
+  rp_viz$xAxis(
+    axisLabel('Risk (std. dev.)')
+    ,tickFormat(d3.format('0.2%')) 
+  )
+  rp_viz$yAxis(
+    axisLabel('Return')
+    ,tickFormat(d3.format('0.2%')) 
+  )
+  #set left margin so y axis label will show up
+  rp_viz$chart(margin = list(left = 100))
+  ####if you do not want fisheye/magnify
+  ####let me know, and will show how to remove
+  ####this will solve the tooltip problem
   save(rp_viz, file="figures/rp_viz.rda")
   ###
   x.lower <- min(x.assets) * 0.9
