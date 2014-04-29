@@ -382,12 +382,12 @@ if(file.exists("figures/rp_plot.png")){
     , type="scatterChart"
   )
   rp_viz$xAxis(
-    axisLabel('Risk (std. dev.)')
-    ,tickFormat(d3.format('0.2%')) 
+    axisLabel = 'Risk (std. dev.)'
+    ,tickFormat = "#!d3.format('0.2%')!#"
   )
   rp_viz$yAxis(
-    axisLabel('Return')
-    ,tickFormat(d3.format('0.2%')) 
+    axisLabel = 'Return'
+    ,tickFormat = "#!d3.format('0.2%')!#" 
   )
   #set left margin so y axis label will show up
   rp_viz$chart(margin = list(left = 100))
