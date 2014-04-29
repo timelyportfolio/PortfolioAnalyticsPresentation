@@ -401,7 +401,7 @@ if(file.exists("figures/rp_plot.png")){
   y.lower <- min(y.assets) * 0.9
   y.upper <- max(y.assets) * 1.1
   
-  png("figures/rp_plot.png")
+  png("figures/rp_plot.png", height = 500, width = 1000)
   # plot feasible portfolios 
   plot(x=rp1_StdDev, y=rp1_mean, col="gray", main="Random Portfolio Methods",
        ylab="mean", xlab="StdDev", xlim=c(x.lower, x.upper), 
