@@ -397,7 +397,9 @@ if(file.exists("figures/rp_plot.png")){
         //d has all the info  you need
         return( '<h3>' + d.point.series + '</h3>Return: ' + d.point.y  +  '<br>Risk: ' + d.point.x)
       }
-    !#")
+    !#"
+    ,color = PerformanceAnalytics::bluemono
+  )
   ####if you do not want fisheye/magnify
   ####let me know, and will show how to remove
   ####this will solve the tooltip problem
