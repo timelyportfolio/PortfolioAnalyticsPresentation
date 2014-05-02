@@ -1,0 +1,2065 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Complex Portfolio Optimization with PortfolioAnalytics</title>
+  <meta charset="utf-8">
+  <meta name="description" content="Complex Portfolio Optimization with PortfolioAnalytics">
+  <meta name="author" content="Ross Bennett">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  <link rel=stylesheet href="libraries/widgets/nvd3/css/nv.d3.css"></link>
+<link rel=stylesheet href="libraries/widgets/nvd3/css/rNVD3.css"></link>
+
+  
+  <!-- Grab CDN jQuery, fall back to local if offline -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+  <script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery.js"><\/script>')</script> 
+  <script data-main="libraries/frameworks/io2012/js/slides" 
+    src="libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+  <script src="libraries/widgets/nvd3/js/jquery-1.8.2.min.js"></script>
+<script src="libraries/widgets/nvd3/js/d3.v3.min.js"></script>
+<script src="libraries/widgets/nvd3/js/nv.d3.min-new.js"></script>
+<script src="libraries/widgets/nvd3/js/fisheye.js"></script>
+
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+        <slide class="title-slide segue nobackground">
+  <hgroup class="auto-fadein">
+    <h1>Complex Portfolio Optimization with PortfolioAnalytics</h1>
+    <h2>R/Finance 2014</h2>
+    <p>Ross Bennett<br/></p>
+  </hgroup>
+  <article></article>  
+</slide>
+    
+
+    <!-- SLIDES -->
+    <slide class="" id="slide-1" style="background:;">
+  <article data-timings="">
+    
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-2" style="background:;">
+  <hgroup>
+    <h2>Min ES Equal Component Contribution Risk Contributions and Weights (interactive!)</h2>
+  </hgroup>
+  <article data-timings="">
+    
+<div style='float:left;width:48%;' class='centered'>
+  <div id = 'chart5e742232a41' class = 'rChart nvd3'></div>
+
+<script type='text/javascript'>
+ $(document).ready(function(){
+      drawchart5e742232a41()
+    });
+    function drawchart5e742232a41(){  
+      var opts = {
+ "dom": "chart5e742232a41",
+"width":    450,
+"height":    400,
+"x": "date",
+"y": "weight",
+"group": "stock",
+"type": "multiBarChart",
+"id": "chart5e742232a41" 
+},
+        data = [
+ {
+ "date":          13513,
+"stock": "CA",
+"weight": 0.09602448566252 
+},
+{
+ "date":          13603,
+"stock": "CA",
+"weight": 0.108648220638 
+},
+{
+ "date":          13694,
+"stock": "CA",
+"weight":          0.106 
+},
+{
+ "date":          13786,
+"stock": "CA",
+"weight":          0.084 
+},
+{
+ "date":          13878,
+"stock": "CA",
+"weight": 0.1052086094291 
+},
+{
+ "date":          13969,
+"stock": "CA",
+"weight":           0.12 
+},
+{
+ "date":          14060,
+"stock": "CA",
+"weight": 0.130372650812 
+},
+{
+ "date":          14152,
+"stock": "CA",
+"weight": 0.06996384290778 
+},
+{
+ "date":          14244,
+"stock": "CA",
+"weight": 0.06906817034693 
+},
+{
+ "date":          14334,
+"stock": "CA",
+"weight":          0.064 
+},
+{
+ "date":          14425,
+"stock": "CA",
+"weight": 0.07647171454538 
+},
+{
+ "date":          14517,
+"stock": "CA",
+"weight": 0.06868510854847 
+},
+{
+ "date":          14609,
+"stock": "CA",
+"weight":          0.068 
+},
+{
+ "date":          14699,
+"stock": "CA",
+"weight": 0.07304979758514 
+},
+{
+ "date":          14790,
+"stock": "CA",
+"weight": 0.05002259948125 
+},
+{
+ "date":          14882,
+"stock": "CA",
+"weight": 0.06527133420334 
+},
+{
+ "date":          14974,
+"stock": "CA",
+"weight": 0.0689576086001 
+},
+{
+ "date":          15064,
+"stock": "CA",
+"weight": 0.05771939390457 
+},
+{
+ "date":          15155,
+"stock": "CA",
+"weight": 0.06894375136732 
+},
+{
+ "date":          15247,
+"stock": "CA",
+"weight": 0.07209877636601 
+},
+{
+ "date":          15339,
+"stock": "CA",
+"weight":           0.07 
+},
+{
+ "date":          15430,
+"stock": "CA",
+"weight": 0.06611096298116 
+},
+{
+ "date":          15521,
+"stock": "CA",
+"weight":          0.058 
+},
+{
+ "date":          15613,
+"stock": "CA",
+"weight": 0.07649930896739 
+},
+{
+ "date":          15705,
+"stock": "CA",
+"weight":          0.068 
+},
+{
+ "date":          15795,
+"stock": "CA",
+"weight": 0.07087531536362 
+},
+{
+ "date":          15886,
+"stock": "CA",
+"weight": 0.07107683845736 
+},
+{
+ "date":          15978,
+"stock": "CA",
+"weight":           0.05 
+},
+{
+ "date":          16070,
+"stock": "CA",
+"weight": 0.06906023087756 
+},
+{
+ "date":          16101,
+"stock": "CA",
+"weight": 0.07479187720734 
+},
+{
+ "date":          13513,
+"stock": "EMN",
+"weight": 0.2117810599622 
+},
+{
+ "date":          13603,
+"stock": "EMN",
+"weight":          0.226 
+},
+{
+ "date":          13694,
+"stock": "EMN",
+"weight": 0.1833985987942 
+},
+{
+ "date":          13786,
+"stock": "EMN",
+"weight":           0.26 
+},
+{
+ "date":          13878,
+"stock": "EMN",
+"weight": 0.2802876751675 
+},
+{
+ "date":          13969,
+"stock": "EMN",
+"weight": 0.387790292775 
+},
+{
+ "date":          14060,
+"stock": "EMN",
+"weight": 0.3427657650597 
+},
+{
+ "date":          14152,
+"stock": "EMN",
+"weight": 0.2503796021608 
+},
+{
+ "date":          14244,
+"stock": "EMN",
+"weight": 0.2462156019887 
+},
+{
+ "date":          14334,
+"stock": "EMN",
+"weight":          0.268 
+},
+{
+ "date":          14425,
+"stock": "EMN",
+"weight":           0.21 
+},
+{
+ "date":          14517,
+"stock": "EMN",
+"weight": 0.2393491536599 
+},
+{
+ "date":          14609,
+"stock": "EMN",
+"weight": 0.2440620257576 
+},
+{
+ "date":          14699,
+"stock": "EMN",
+"weight": 0.2537258674634 
+},
+{
+ "date":          14790,
+"stock": "EMN",
+"weight": 0.2117315926896 
+},
+{
+ "date":          14882,
+"stock": "EMN",
+"weight":  0.23422134253 
+},
+{
+ "date":          14974,
+"stock": "EMN",
+"weight":          0.274 
+},
+{
+ "date":          15064,
+"stock": "EMN",
+"weight":          0.222 
+},
+{
+ "date":          15155,
+"stock": "EMN",
+"weight":          0.224 
+},
+{
+ "date":          15247,
+"stock": "EMN",
+"weight": 0.2352054297666 
+},
+{
+ "date":          15339,
+"stock": "EMN",
+"weight": 0.2201885900102 
+},
+{
+ "date":          15430,
+"stock": "EMN",
+"weight": 0.2289912951112 
+},
+{
+ "date":          15521,
+"stock": "EMN",
+"weight": 0.2553292882605 
+},
+{
+ "date":          15613,
+"stock": "EMN",
+"weight": 0.2433979517644 
+},
+{
+ "date":          15705,
+"stock": "EMN",
+"weight":          0.232 
+},
+{
+ "date":          15795,
+"stock": "EMN",
+"weight": 0.230884207949 
+},
+{
+ "date":          15886,
+"stock": "EMN",
+"weight": 0.2585705490608 
+},
+{
+ "date":          15978,
+"stock": "EMN",
+"weight":          0.252 
+},
+{
+ "date":          16070,
+"stock": "EMN",
+"weight": 0.2520410095752 
+},
+{
+ "date":          16101,
+"stock": "EMN",
+"weight": 0.2164512702591 
+},
+{
+ "date":          13513,
+"stock": "FIA",
+"weight": 0.4989719077867 
+},
+{
+ "date":          13603,
+"stock": "FIA",
+"weight":          0.474 
+},
+{
+ "date":          13694,
+"stock": "FIA",
+"weight":          0.484 
+},
+{
+ "date":          13786,
+"stock": "FIA",
+"weight":          0.482 
+},
+{
+ "date":          13878,
+"stock": "FIA",
+"weight": 0.3938434657493 
+},
+{
+ "date":          13969,
+"stock": "FIA",
+"weight": 0.1843145608375 
+},
+{
+ "date":          14060,
+"stock": "FIA",
+"weight":          0.176 
+},
+{
+ "date":          14152,
+"stock": "FIA",
+"weight": 0.1867182125696 
+},
+{
+ "date":          14244,
+"stock": "FIA",
+"weight": 0.1322311468948 
+},
+{
+ "date":          14334,
+"stock": "FIA",
+"weight": 0.1476441498505 
+},
+{
+ "date":          14425,
+"stock": "FIA",
+"weight": 0.1363561554136 
+},
+{
+ "date":          14517,
+"stock": "FIA",
+"weight": 0.1300689337495 
+},
+{
+ "date":          14609,
+"stock": "FIA",
+"weight": 0.1416745520052 
+},
+{
+ "date":          14699,
+"stock": "FIA",
+"weight":          0.128 
+},
+{
+ "date":          14790,
+"stock": "FIA",
+"weight":           0.13 
+},
+{
+ "date":          14882,
+"stock": "FIA",
+"weight": 0.1258868743137 
+},
+{
+ "date":          14974,
+"stock": "FIA",
+"weight":            0.1 
+},
+{
+ "date":          15064,
+"stock": "FIA",
+"weight":          0.124 
+},
+{
+ "date":          15155,
+"stock": "FIA",
+"weight": 0.1265026121485 
+},
+{
+ "date":          15247,
+"stock": "FIA",
+"weight": 0.1253381454164 
+},
+{
+ "date":          15339,
+"stock": "FIA",
+"weight": 0.131700614103 
+},
+{
+ "date":          15430,
+"stock": "FIA",
+"weight": 0.1404026764202 
+},
+{
+ "date":          15521,
+"stock": "FIA",
+"weight":           0.12 
+},
+{
+ "date":          15613,
+"stock": "FIA",
+"weight":          0.114 
+},
+{
+ "date":          15705,
+"stock": "FIA",
+"weight": 0.123239429004 
+},
+{
+ "date":          15795,
+"stock": "FIA",
+"weight": 0.1280050328047 
+},
+{
+ "date":          15886,
+"stock": "FIA",
+"weight": 0.1124553200575 
+},
+{
+ "date":          15978,
+"stock": "FIA",
+"weight":          0.118 
+},
+{
+ "date":          16070,
+"stock": "FIA",
+"weight": 0.116832640271 
+},
+{
+ "date":          16101,
+"stock": "FIA",
+"weight": 0.1287310484214 
+},
+{
+ "date":          13513,
+"stock": "CTAG",
+"weight":           0.05 
+},
+{
+ "date":          13603,
+"stock": "CTAG",
+"weight":           0.05 
+},
+{
+ "date":          13694,
+"stock": "CTAG",
+"weight":          0.054 
+},
+{
+ "date":          13786,
+"stock": "CTAG",
+"weight":           0.05 
+},
+{
+ "date":          13878,
+"stock": "CTAG",
+"weight":           0.05 
+},
+{
+ "date":          13969,
+"stock": "CTAG",
+"weight": 0.1089627103432 
+},
+{
+ "date":          14060,
+"stock": "CTAG",
+"weight":          0.106 
+},
+{
+ "date":          14152,
+"stock": "CTAG",
+"weight": 0.2625623058828 
+},
+{
+ "date":          14244,
+"stock": "CTAG",
+"weight": 0.2881663207127 
+},
+{
+ "date":          14334,
+"stock": "CTAG",
+"weight":           0.28 
+},
+{
+ "date":          14425,
+"stock": "CTAG",
+"weight": 0.3319914074813 
+},
+{
+ "date":          14517,
+"stock": "CTAG",
+"weight": 0.3028964276921 
+},
+{
+ "date":          14609,
+"stock": "CTAG",
+"weight": 0.3084414562759 
+},
+{
+ "date":          14699,
+"stock": "CTAG",
+"weight": 0.3112833131008 
+},
+{
+ "date":          14790,
+"stock": "CTAG",
+"weight": 0.3369482479744 
+},
+{
+ "date":          14882,
+"stock": "CTAG",
+"weight": 0.3304971765864 
+},
+{
+ "date":          14974,
+"stock": "CTAG",
+"weight": 0.3301111075499 
+},
+{
+ "date":          15064,
+"stock": "CTAG",
+"weight":          0.326 
+},
+{
+ "date":          15155,
+"stock": "CTAG",
+"weight": 0.3334130933583 
+},
+{
+ "date":          15247,
+"stock": "CTAG",
+"weight": 0.3251988217108 
+},
+{
+ "date":          15339,
+"stock": "CTAG",
+"weight": 0.3425293423349 
+},
+{
+ "date":          15430,
+"stock": "CTAG",
+"weight": 0.3385600996799 
+},
+{
+ "date":          15521,
+"stock": "CTAG",
+"weight": 0.3282308701956 
+},
+{
+ "date":          15613,
+"stock": "CTAG",
+"weight": 0.3530121436443 
+},
+{
+ "date":          15705,
+"stock": "CTAG",
+"weight": 0.3414088405951 
+},
+{
+ "date":          15795,
+"stock": "CTAG",
+"weight": 0.3392307254356 
+},
+{
+ "date":          15886,
+"stock": "CTAG",
+"weight":          0.324 
+},
+{
+ "date":          15978,
+"stock": "CTAG",
+"weight":          0.326 
+},
+{
+ "date":          16070,
+"stock": "CTAG",
+"weight": 0.3370041247796 
+},
+{
+ "date":          16101,
+"stock": "CTAG",
+"weight": 0.338716786807 
+},
+{
+ "date":          13513,
+"stock": "EM",
+"weight": 0.06844547842332 
+},
+{
+ "date":          13603,
+"stock": "EM",
+"weight":          0.064 
+},
+{
+ "date":          13694,
+"stock": "EM",
+"weight":           0.07 
+},
+{
+ "date":          13786,
+"stock": "EM",
+"weight":           0.05 
+},
+{
+ "date":          13878,
+"stock": "EM",
+"weight": 0.06472041688661 
+},
+{
+ "date":          13969,
+"stock": "EM",
+"weight": 0.07073391522525 
+},
+{
+ "date":          14060,
+"stock": "EM",
+"weight": 0.09253718411729 
+},
+{
+ "date":          14152,
+"stock": "EM",
+"weight": 0.07054132167233 
+},
+{
+ "date":          14244,
+"stock": "EM",
+"weight": 0.06645333708759 
+},
+{
+ "date":          14334,
+"stock": "EM",
+"weight": 0.05041124974248 
+},
+{
+ "date":          14425,
+"stock": "EM",
+"weight":          0.056 
+},
+{
+ "date":          14517,
+"stock": "EM",
+"weight": 0.06055436759446 
+},
+{
+ "date":          14609,
+"stock": "EM",
+"weight": 0.0581995454436 
+},
+{
+ "date":          14699,
+"stock": "EM",
+"weight": 0.06153451821973 
+},
+{
+ "date":          14790,
+"stock": "EM",
+"weight":           0.07 
+},
+{
+ "date":          14882,
+"stock": "EM",
+"weight": 0.05845465287588 
+},
+{
+ "date":          14974,
+"stock": "EM",
+"weight":          0.066 
+},
+{
+ "date":          15064,
+"stock": "EM",
+"weight": 0.05569284169164 
+},
+{
+ "date":          15155,
+"stock": "EM",
+"weight": 0.056416524586 
+},
+{
+ "date":          15247,
+"stock": "EM",
+"weight": 0.05507535633154 
+},
+{
+ "date":          15339,
+"stock": "EM",
+"weight": 0.05835111687713 
+},
+{
+ "date":          15430,
+"stock": "EM",
+"weight": 0.05575908877912 
+},
+{
+ "date":          15521,
+"stock": "EM",
+"weight": 0.06140891696217 
+},
+{
+ "date":          15613,
+"stock": "EM",
+"weight":          0.054 
+},
+{
+ "date":          15705,
+"stock": "EM",
+"weight": 0.05860440083468 
+},
+{
+ "date":          15795,
+"stock": "EM",
+"weight": 0.0592546769325 
+},
+{
+ "date":          15886,
+"stock": "EM",
+"weight":           0.06 
+},
+{
+ "date":          15978,
+"stock": "EM",
+"weight":          0.058 
+},
+{
+ "date":          16070,
+"stock": "EM",
+"weight": 0.05702647586146 
+},
+{
+ "date":          16101,
+"stock": "EM",
+"weight": 0.05494595244902 
+},
+{
+ "date":          13513,
+"stock": "GM",
+"weight":           0.08 
+},
+{
+ "date":          13603,
+"stock": "GM",
+"weight":          0.076 
+},
+{
+ "date":          13694,
+"stock": "GM",
+"weight":          0.094 
+},
+{
+ "date":          13786,
+"stock": "GM",
+"weight":          0.068 
+},
+{
+ "date":          13878,
+"stock": "GM",
+"weight": 0.1158929762168 
+},
+{
+ "date":          13969,
+"stock": "GM",
+"weight": 0.137701017584 
+},
+{
+ "date":          14060,
+"stock": "GM",
+"weight":          0.148 
+},
+{
+ "date":          14152,
+"stock": "GM",
+"weight": 0.1601566574204 
+},
+{
+ "date":          14244,
+"stock": "GM",
+"weight": 0.1953022255756 
+},
+{
+ "date":          14334,
+"stock": "GM",
+"weight":          0.186 
+},
+{
+ "date":          14425,
+"stock": "GM",
+"weight": 0.1956121056978 
+},
+{
+ "date":          14517,
+"stock": "GM",
+"weight": 0.1894299405461 
+},
+{
+ "date":          14609,
+"stock": "GM",
+"weight": 0.1892154756461 
+},
+{
+ "date":          14699,
+"stock": "GM",
+"weight": 0.1752859218214 
+},
+{
+ "date":          14790,
+"stock": "GM",
+"weight": 0.1970517520256 
+},
+{
+ "date":          14882,
+"stock": "GM",
+"weight": 0.1827341114613 
+},
+{
+ "date":          14974,
+"stock": "GM",
+"weight": 0.160371104533 
+},
+{
+ "date":          15064,
+"stock": "GM",
+"weight": 0.2047332150562 
+},
+{
+ "date":          15155,
+"stock": "GM",
+"weight": 0.1864791284203 
+},
+{
+ "date":          15247,
+"stock": "GM",
+"weight": 0.1797225394717 
+},
+{
+ "date":          15339,
+"stock": "GM",
+"weight":          0.178 
+},
+{
+ "date":          15430,
+"stock": "GM",
+"weight":          0.164 
+},
+{
+ "date":          15521,
+"stock": "GM",
+"weight":          0.168 
+},
+{
+ "date":          15613,
+"stock": "GM",
+"weight": 0.158178393491 
+},
+{
+ "date":          15705,
+"stock": "GM",
+"weight": 0.1824024146616 
+},
+{
+ "date":          15795,
+"stock": "GM",
+"weight": 0.1781511179584 
+},
+{
+ "date":          15886,
+"stock": "GM",
+"weight":          0.174 
+},
+{
+ "date":          15978,
+"stock": "GM",
+"weight":          0.192 
+},
+{
+ "date":          16070,
+"stock": "GM",
+"weight":          0.178 
+},
+{
+ "date":          16101,
+"stock": "GM",
+"weight": 0.1811281513617 
+} 
+]
+  
+      if(!(opts.type==="pieChart" || opts.type==="sparklinePlus" || opts.type==="bulletChart")) {
+        var data = d3.nest()
+          .key(function(d){
+            //return opts.group === undefined ? 'main' : d[opts.group]
+            //instead of main would think a better default is opts.x
+            return opts.group === undefined ? opts.y : d[opts.group];
+          })
+          .entries(data);
+      }
+      
+      if (opts.disabled != undefined){
+        data.map(function(d, i){
+          d.disabled = opts.disabled[i]
+        })
+      }
+      
+      nv.addGraph(function() {
+        var chart = nv.models[opts.type]()
+          .width(opts.width)
+          .height(opts.height)
+          
+        if (opts.type != "bulletChart"){
+          chart
+            .x(function(d) { return d[opts.x] })
+            .y(function(d) { return d[opts.y] })
+        }
+          
+         
+        chart
+  .stacked(true)
+          
+        chart.xAxis
+  .tickFormat(function(d){
+    return d3.time.format('%b %Y')(new Date(d * 24 * 60 * 60 * 1000))
+    })
+
+        
+        
+        chart.yAxis
+  .tickFormat(function(d){
+    return d3.format('0.2%')(d)
+    })
+      
+       d3.select("#" + opts.id)
+        .append('svg')
+        .datum(data)
+        .transition().duration(500)
+        .call(chart);
+
+       nv.utils.windowResize(chart.update);
+       return chart;
+      });
+    };
+</script>
+
+</div>
+<div style='float:right;width:48%;'>
+  <div id = 'chart5e725b697b8' class = 'rChart nvd3'></div>
+
+<script type='text/javascript'>
+ $(document).ready(function(){
+      drawchart5e725b697b8()
+    });
+    function drawchart5e725b697b8(){  
+      var opts = {
+ "dom": "chart5e725b697b8",
+"width":    450,
+"height":    400,
+"x": "date",
+"y": "risk",
+"group": "fund",
+"type": "multiBarChart",
+"id": "chart5e725b697b8" 
+},
+        data = [
+ {
+ "date":          13513,
+"fund": "CA",
+"risk": 0.157582705534 
+},
+{
+ "date":          13603,
+"fund": "CA",
+"risk": 0.2054470067933 
+},
+{
+ "date":          13694,
+"fund": "CA",
+"risk": 0.172226726396 
+},
+{
+ "date":          13786,
+"fund": "CA",
+"risk": 0.1403443983496 
+},
+{
+ "date":          13878,
+"fund": "CA",
+"risk": 0.1654702119764 
+},
+{
+ "date":          13969,
+"fund": "CA",
+"risk": 0.1644295540582 
+},
+{
+ "date":          14060,
+"fund": "CA",
+"risk": 0.1722157951409 
+},
+{
+ "date":          14152,
+"fund": "CA",
+"risk": 0.1596198199404 
+},
+{
+ "date":          14244,
+"fund": "CA",
+"risk": 0.1585109419483 
+},
+{
+ "date":          14334,
+"fund": "CA",
+"risk": 0.1573087197099 
+},
+{
+ "date":          14425,
+"fund": "CA",
+"risk": 0.1776582080179 
+},
+{
+ "date":          14517,
+"fund": "CA",
+"risk": 0.1662894963767 
+},
+{
+ "date":          14609,
+"fund": "CA",
+"risk": 0.1637173004128 
+},
+{
+ "date":          14699,
+"fund": "CA",
+"risk": 0.1762879302251 
+},
+{
+ "date":          14790,
+"fund": "CA",
+"risk": 0.1240208291949 
+},
+{
+ "date":          14882,
+"fund": "CA",
+"risk": 0.1664940300598 
+},
+{
+ "date":          14974,
+"fund": "CA",
+"risk": 0.1700949293145 
+},
+{
+ "date":          15064,
+"fund": "CA",
+"risk": 0.1492801731167 
+},
+{
+ "date":          15155,
+"fund": "CA",
+"risk": 0.1668540328257 
+},
+{
+ "date":          15247,
+"fund": "CA",
+"risk": 0.1727877495702 
+},
+{
+ "date":          15339,
+"fund": "CA",
+"risk": 0.165918533447 
+},
+{
+ "date":          15430,
+"fund": "CA",
+"risk": 0.1590695413179 
+},
+{
+ "date":          15521,
+"fund": "CA",
+"risk": 0.1406763678212 
+},
+{
+ "date":          15613,
+"fund": "CA",
+"risk": 0.1775632471907 
+},
+{
+ "date":          15705,
+"fund": "CA",
+"risk": 0.1592148824852 
+},
+{
+ "date":          15795,
+"fund": "CA",
+"risk": 0.1685657634144 
+},
+{
+ "date":          15886,
+"fund": "CA",
+"risk": 0.1655875404104 
+},
+{
+ "date":          15978,
+"fund": "CA",
+"risk": 0.1160699951969 
+},
+{
+ "date":          16070,
+"fund": "CA",
+"risk": 0.1673698803736 
+},
+{
+ "date":          16101,
+"fund": "CA",
+"risk": 0.186054909812 
+},
+{
+ "date":          13513,
+"fund": "EMN",
+"risk": 0.0833552475362 
+},
+{
+ "date":          13603,
+"fund": "EMN",
+"risk": 0.09135569811989 
+},
+{
+ "date":          13694,
+"fund": "EMN",
+"risk": 0.06534737163404 
+},
+{
+ "date":          13786,
+"fund": "EMN",
+"risk": 0.1867851716133 
+},
+{
+ "date":          13878,
+"fund": "EMN",
+"risk": 0.1658568433272 
+},
+{
+ "date":          13969,
+"fund": "EMN",
+"risk": 0.1673590939869 
+},
+{
+ "date":          14060,
+"fund": "EMN",
+"risk": 0.1404204229855 
+},
+{
+ "date":          14152,
+"fund": "EMN",
+"risk": 0.1676893825088 
+},
+{
+ "date":          14244,
+"fund": "EMN",
+"risk": 0.162806720501 
+},
+{
+ "date":          14334,
+"fund": "EMN",
+"risk": 0.1983736517117 
+},
+{
+ "date":          14425,
+"fund": "EMN",
+"risk": 0.1340591041453 
+},
+{
+ "date":          14517,
+"fund": "EMN",
+"risk": 0.1666480341483 
+},
+{
+ "date":          14609,
+"fund": "EMN",
+"risk": 0.1697063036203 
+},
+{
+ "date":          14699,
+"fund": "EMN",
+"risk": 0.1802512901904 
+},
+{
+ "date":          14790,
+"fund": "EMN",
+"risk": 0.1410733219921 
+},
+{
+ "date":          14882,
+"fund": "EMN",
+"risk": 0.1666163148557 
+},
+{
+ "date":          14974,
+"fund": "EMN",
+"risk": 0.2034501230144 
+},
+{
+ "date":          15064,
+"fund": "EMN",
+"risk": 0.1631459968427 
+},
+{
+ "date":          15155,
+"fund": "EMN",
+"risk": 0.1583312976444 
+},
+{
+ "date":          15247,
+"fund": "EMN",
+"risk": 0.1750815406611 
+},
+{
+ "date":          15339,
+"fund": "EMN",
+"risk": 0.1582895543228 
+},
+{
+ "date":          15430,
+"fund": "EMN",
+"risk": 0.1694583956361 
+},
+{
+ "date":          15521,
+"fund": "EMN",
+"risk": 0.2018941739311 
+},
+{
+ "date":          15613,
+"fund": "EMN",
+"risk": 0.1817132491531 
+},
+{
+ "date":          15705,
+"fund": "EMN",
+"risk": 0.1679930356328 
+},
+{
+ "date":          15795,
+"fund": "EMN",
+"risk": 0.1665912015773 
+},
+{
+ "date":          15886,
+"fund": "EMN",
+"risk": 0.1887189047756 
+},
+{
+ "date":          15978,
+"fund": "EMN",
+"risk": 0.1865219053876 
+},
+{
+ "date":          16070,
+"fund": "EMN",
+"risk": 0.1861458063107 
+},
+{
+ "date":          16101,
+"fund": "EMN",
+"risk": 0.1507636960848 
+},
+{
+ "date":          13513,
+"fund": "FIA",
+"risk": 0.1337411724286 
+},
+{
+ "date":          13603,
+"fund": "FIA",
+"risk": 0.1221648471368 
+},
+{
+ "date":          13694,
+"fund": "FIA",
+"risk": 0.1127517450593 
+},
+{
+ "date":          13786,
+"fund": "FIA",
+"risk": 0.2065153347177 
+},
+{
+ "date":          13878,
+"fund": "FIA",
+"risk": 0.1662827580051 
+},
+{
+ "date":          13969,
+"fund": "FIA",
+"risk": 0.1588551007497 
+},
+{
+ "date":          14060,
+"fund": "FIA",
+"risk": 0.145701550548 
+},
+{
+ "date":          14152,
+"fund": "FIA",
+"risk": 0.2061092020265 
+},
+{
+ "date":          14244,
+"fund": "FIA",
+"risk": 0.1672619586783 
+},
+{
+ "date":          14334,
+"fund": "FIA",
+"risk": 0.2008132262856 
+},
+{
+ "date":          14425,
+"fund": "FIA",
+"risk": 0.1634925812629 
+},
+{
+ "date":          14517,
+"fund": "FIA",
+"risk": 0.1669725024489 
+},
+{
+ "date":          14609,
+"fund": "FIA",
+"risk": 0.1810757885443 
+},
+{
+ "date":          14699,
+"fund": "FIA",
+"risk": 0.1624200496336 
+},
+{
+ "date":          14790,
+"fund": "FIA",
+"risk": 0.1646565995343 
+},
+{
+ "date":          14882,
+"fund": "FIA",
+"risk": 0.1673762093726 
+},
+{
+ "date":          14974,
+"fund": "FIA",
+"risk": 0.1279125369239 
+},
+{
+ "date":          15064,
+"fund": "FIA",
+"risk": 0.166898439846 
+},
+{
+ "date":          15155,
+"fund": "FIA",
+"risk": 0.1653442735458 
+},
+{
+ "date":          15247,
+"fund": "FIA",
+"risk": 0.1618701772182 
+},
+{
+ "date":          15339,
+"fund": "FIA",
+"risk": 0.1670181426459 
+},
+{
+ "date":          15430,
+"fund": "FIA",
+"risk": 0.1818460538076 
+},
+{
+ "date":          15521,
+"fund": "FIA",
+"risk": 0.1550829831945 
+},
+{
+ "date":          15613,
+"fund": "FIA",
+"risk": 0.1393264263066 
+},
+{
+ "date":          15705,
+"fund": "FIA",
+"risk": 0.1526079656044 
+},
+{
+ "date":          15795,
+"fund": "FIA",
+"risk": 0.1624936554322 
+},
+{
+ "date":          15886,
+"fund": "FIA",
+"risk": 0.1427752500196 
+},
+{
+ "date":          15978,
+"fund": "FIA",
+"risk": 0.1485842030613 
+},
+{
+ "date":          16070,
+"fund": "FIA",
+"risk": 0.1533552685811 
+},
+{
+ "date":          16101,
+"fund": "FIA",
+"risk": 0.1746711842773 
+},
+{
+ "date":          13513,
+"fund": "CTAG",
+"risk": 0.2724634904667 
+},
+{
+ "date":          13603,
+"fund": "CTAG",
+"risk": 0.267933831352 
+},
+{
+ "date":          13694,
+"fund": "CTAG",
+"risk": 0.2812495359119 
+},
+{
+ "date":          13786,
+"fund": "CTAG",
+"risk": 0.229935699719 
+},
+{
+ "date":          13878,
+"fund": "CTAG",
+"risk": 0.1700699365317 
+},
+{
+ "date":          13969,
+"fund": "CTAG",
+"risk": 0.1982352393144 
+},
+{
+ "date":          14060,
+"fund": "CTAG",
+"risk": 0.179495480905 
+},
+{
+ "date":          14152,
+"fund": "CTAG",
+"risk": 0.1524835131877 
+},
+{
+ "date":          14244,
+"fund": "CTAG",
+"risk": 0.1688451054373 
+},
+{
+ "date":          14334,
+"fund": "CTAG",
+"risk": 0.1409951055361 
+},
+{
+ "date":          14425,
+"fund": "CTAG",
+"risk": 0.210344498747 
+},
+{
+ "date":          14517,
+"fund": "CTAG",
+"risk": 0.1666840206567 
+},
+{
+ "date":          14609,
+"fund": "CTAG",
+"risk": 0.1626862343848 
+},
+{
+ "date":          14699,
+"fund": "CTAG",
+"risk": 0.1625092912251 
+},
+{
+ "date":          14790,
+"fund": "CTAG",
+"risk": 0.1995859591947 
+},
+{
+ "date":          14882,
+"fund": "CTAG",
+"risk": 0.1672235774497 
+},
+{
+ "date":          14974,
+"fund": "CTAG",
+"risk": 0.1718635643167 
+},
+{
+ "date":          15064,
+"fund": "CTAG",
+"risk": 0.1638812062871 
+},
+{
+ "date":          15155,
+"fund": "CTAG",
+"risk": 0.1677178444623 
+},
+{
+ "date":          15247,
+"fund": "CTAG",
+"risk": 0.1552776017756 
+},
+{
+ "date":          15339,
+"fund": "CTAG",
+"risk": 0.1703370020525 
+},
+{
+ "date":          15430,
+"fund": "CTAG",
+"risk": 0.1672736948382 
+},
+{
+ "date":          15521,
+"fund": "CTAG",
+"risk": 0.162985391952 
+},
+{
+ "date":          15613,
+"fund": "CTAG",
+"risk": 0.197825588219 
+},
+{
+ "date":          15705,
+"fund": "CTAG",
+"risk": 0.1833509072135 
+},
+{
+ "date":          15795,
+"fund": "CTAG",
+"risk": 0.1675769038076 
+},
+{
+ "date":          15886,
+"fund": "CTAG",
+"risk": 0.1695286419427 
+},
+{
+ "date":          15978,
+"fund": "CTAG",
+"risk": 0.194519500573 
+},
+{
+ "date":          16070,
+"fund": "CTAG",
+"risk": 0.1565550450978 
+},
+{
+ "date":          16101,
+"fund": "CTAG",
+"risk": 0.151882152552 
+},
+{
+ "date":          13513,
+"fund": "EM",
+"risk": 0.1827913646033 
+},
+{
+ "date":          13603,
+"fund": "EM",
+"risk": 0.1603136406155 
+},
+{
+ "date":          13694,
+"fund": "EM",
+"risk": 0.1786794848674 
+},
+{
+ "date":          13786,
+"fund": "EM",
+"risk": 0.1258687616079 
+},
+{
+ "date":          13878,
+"fund": "EM",
+"risk": 0.1672055824302 
+},
+{
+ "date":          13969,
+"fund": "EM",
+"risk": 0.1537483679375 
+},
+{
+ "date":          14060,
+"fund": "EM",
+"risk": 0.1981130327165 
+},
+{
+ "date":          14152,
+"fund": "EM",
+"risk": 0.1666437012557 
+},
+{
+ "date":          14244,
+"fund": "EM",
+"risk": 0.1715784225108 
+},
+{
+ "date":          14334,
+"fund": "EM",
+"risk": 0.1375882333436 
+},
+{
+ "date":          14425,
+"fund": "EM",
+"risk": 0.1450007222849 
+},
+{
+ "date":          14517,
+"fund": "EM",
+"risk": 0.1653616411972 
+},
+{
+ "date":          14609,
+"fund": "EM",
+"risk": 0.157781186345 
+},
+{
+ "date":          14699,
+"fund": "EM",
+"risk": 0.1664097627839 
+},
+{
+ "date":          14790,
+"fund": "EM",
+"risk": 0.1936216073624 
+},
+{
+ "date":          14882,
+"fund": "EM",
+"risk": 0.1660220204899 
+},
+{
+ "date":          14974,
+"fund": "EM",
+"risk": 0.1833301359695 
+},
+{
+ "date":          15064,
+"fund": "EM",
+"risk": 0.1642166106291 
+},
+{
+ "date":          15155,
+"fund": "EM",
+"risk": 0.1646207957826 
+},
+{
+ "date":          15247,
+"fund": "EM",
+"risk": 0.1650690744162 
+},
+{
+ "date":          15339,
+"fund": "EM",
+"risk": 0.1722963331522 
+},
+{
+ "date":          15430,
+"fund": "EM",
+"risk": 0.1674712000129 
+},
+{
+ "date":          15521,
+"fund": "EM",
+"risk": 0.1829512244519 
+},
+{
+ "date":          15613,
+"fund": "EM",
+"risk": 0.1556006824402 
+},
+{
+ "date":          15705,
+"fund": "EM",
+"risk": 0.1683965775614 
+},
+{
+ "date":          15795,
+"fund": "EM",
+"risk": 0.171679749064 
+},
+{
+ "date":          15886,
+"fund": "EM",
+"risk": 0.173106147118 
+},
+{
+ "date":          15978,
+"fund": "EM",
+"risk": 0.1692660122719 
+},
+{
+ "date":          16070,
+"fund": "EM",
+"risk": 0.168994248719 
+},
+{
+ "date":          16101,
+"fund": "EM",
+"risk": 0.1653093134882 
+},
+{
+ "date":          13513,
+"fund": "GM",
+"risk": 0.1700660194312 
+},
+{
+ "date":          13603,
+"fund": "GM",
+"risk": 0.1527849759826 
+},
+{
+ "date":          13694,
+"fund": "GM",
+"risk": 0.1897451361313 
+},
+{
+ "date":          13786,
+"fund": "GM",
+"risk": 0.1105506339925 
+},
+{
+ "date":          13878,
+"fund": "GM",
+"risk": 0.1651146677295 
+},
+{
+ "date":          13969,
+"fund": "GM",
+"risk": 0.1573726439534 
+},
+{
+ "date":          14060,
+"fund": "GM",
+"risk": 0.1640537177041 
+},
+{
+ "date":          14152,
+"fund": "GM",
+"risk": 0.1474543810809 
+},
+{
+ "date":          14244,
+"fund": "GM",
+"risk": 0.1709968509245 
+},
+{
+ "date":          14334,
+"fund": "GM",
+"risk": 0.1649210634132 
+},
+{
+ "date":          14425,
+"fund": "GM",
+"risk": 0.1694448855419 
+},
+{
+ "date":          14517,
+"fund": "GM",
+"risk": 0.1680443051722 
+},
+{
+ "date":          14609,
+"fund": "GM",
+"risk": 0.1650331866927 
+},
+{
+ "date":          14699,
+"fund": "GM",
+"risk": 0.1521216759419 
+},
+{
+ "date":          14790,
+"fund": "GM",
+"risk": 0.1770416827217 
+},
+{
+ "date":          14882,
+"fund": "GM",
+"risk": 0.1662678477722 
+},
+{
+ "date":          14974,
+"fund": "GM",
+"risk": 0.143348710461 
+},
+{
+ "date":          15064,
+"fund": "GM",
+"risk": 0.1925775732784 
+},
+{
+ "date":          15155,
+"fund": "GM",
+"risk": 0.1771317557392 
+},
+{
+ "date":          15247,
+"fund": "GM",
+"risk": 0.1699138563588 
+},
+{
+ "date":          15339,
+"fund": "GM",
+"risk": 0.1661404343796 
+},
+{
+ "date":          15430,
+"fund": "GM",
+"risk": 0.1548811143874 
+},
+{
+ "date":          15521,
+"fund": "GM",
+"risk": 0.1564098586494 
+},
+{
+ "date":          15613,
+"fund": "GM",
+"risk": 0.1479708066904 
+},
+{
+ "date":          15705,
+"fund": "GM",
+"risk": 0.1684366315028 
+},
+{
+ "date":          15795,
+"fund": "GM",
+"risk": 0.1630927267044 
+},
+{
+ "date":          15886,
+"fund": "GM",
+"risk": 0.1602835157337 
+},
+{
+ "date":          15978,
+"fund": "GM",
+"risk": 0.1850383835093 
+},
+{
+ "date":          16070,
+"fund": "GM",
+"risk": 0.1675797509179 
+},
+{
+ "date":          16101,
+"fund": "GM",
+"risk": 0.1713187437858 
+} 
+]
+  
+      if(!(opts.type==="pieChart" || opts.type==="sparklinePlus" || opts.type==="bulletChart")) {
+        var data = d3.nest()
+          .key(function(d){
+            //return opts.group === undefined ? 'main' : d[opts.group]
+            //instead of main would think a better default is opts.x
+            return opts.group === undefined ? opts.y : d[opts.group];
+          })
+          .entries(data);
+      }
+      
+      if (opts.disabled != undefined){
+        data.map(function(d, i){
+          d.disabled = opts.disabled[i]
+        })
+      }
+      
+      nv.addGraph(function() {
+        var chart = nv.models[opts.type]()
+          .width(opts.width)
+          .height(opts.height)
+          
+        if (opts.type != "bulletChart"){
+          chart
+            .x(function(d) { return d[opts.x] })
+            .y(function(d) { return d[opts.y] })
+        }
+          
+         
+        chart
+  .stacked(true)
+          
+        chart.xAxis
+  .tickFormat(function(d){
+    return d3.time.format('%b %Y')(new Date(d * 24 * 60 * 60 * 1000))
+    })
+
+        
+        
+        chart.yAxis
+  .tickFormat(function(d){
+    return d3.format('0.2%')(d)
+    })
+      
+       d3.select("#" + opts.id)
+        .append('svg')
+        .datum(data)
+        .transition().duration(500)
+        .call(chart);
+
+       nv.utils.windowResize(chart.update);
+       return chart;
+      });
+    };
+</script>
+
+</div>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+    <slide class="backdrop"></slide>
+  </slides>
+  <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
+    <ul>
+      <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=1 title=''>
+         1
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=2 title='Min ES Equal Component Contribution Risk Contributions and Weights (interactive!)'>
+         2
+      </a>
+    </li>
+  </ul>
+  </div>  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+  <!-- Load Javascripts for Widgets -->
+  
+  <!-- MathJax: Fall back to local if CDN offline but local image fonts are not supported (saves >100MB) -->
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [['$','$'], ['\\(','\\)']],
+        processEscapes: true
+      }
+    });
+  </script>
+  <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  <!-- <script src="https://c328740.ssl.cf1.rackcdn.com/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script> -->
+  <script>window.MathJax || document.write('<script type="text/x-mathjax-config">MathJax.Hub.Config({"HTML-CSS":{imageFont:null}});<\/script><script src="libraries/widgets/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML"><\/script>')
+</script>
+<!-- LOAD HIGHLIGHTER JS FILES -->
+  <script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!-- DONE LOADING HIGHLIGHTER JS FILES -->
+   
+  </html>

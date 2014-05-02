@@ -1,0 +1,50 @@
+---
+title       : Complex Portfolio Optimization with PortfolioAnalytics
+subtitle    : R/Finance 2014
+author      : Ross Bennett
+date        : May 16, 2014
+framework   : io2012 # {io2012, html5slides, shower, dzslides, ...}
+ext_widgets : {rCharts: libraries/nvd3}
+widgets     : mathjax
+mode        : selfcontained
+---
+  
+```{r, echo=FALSE, message=FALSE}
+library(PortfolioAnalytics)
+require(rCharts)
+require(methods)
+```
+
+--- &twocol
+
+## Min ES Equal Component Contribution Risk Contributions and Weights (interactive!)
+```{r, results = 'asis', comment = NA, message = F, echo = F}
+load("figures/bt_w3.rda")
+load("figures/bt_rb3.rda")
+```
+
+*** =left
+
+```{r, results = 'asis', comment = NA, message = F, echo = F}
+bt_w3$set(
+  height = 400
+  ,width = 450
+)
+bt_w3$chart( stacked=T )
+bt_w3$setLib("nvd3")
+bt_w3$setTemplate(afterScript="<script></script>")
+bt_w3$show('inline')
+```
+
+*** =right
+
+```{r, results = 'asis', comment = NA, message = F, echo = F}
+bt_rb3$set(
+  height = 400
+  ,width = 450
+)
+bt_rb3$chart( stacked=T )
+bt_rb3$setLib("nvd3")
+bt_rb3$setTemplate(afterScript="<script></script>")
+bt_rb3$show('inline')
+```
